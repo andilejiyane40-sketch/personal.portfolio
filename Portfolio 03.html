@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Andile Jiyane | UI/UX Designer</title>
+     </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: rgb(241, 9, 9);
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: #050505;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #999;
+        }
+
+        nav a {
+            color: rgb(255, 11, 11);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #999;
+        }
+
+        /* HOME SECTION */
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 80px 8%;
+            background: #080808;
+        }
+
+        .hero-image {
+            width: 44%;
+            max-width: 520px;
+            height: 520px;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            flex: 1;
+        }
+
+        .hero h3 {
+            color: #aaa;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #aaa;
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #999;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 85px 8%;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #999;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-content img {
+            width: 350px;
+            max-width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .about-text p {
+            color: #bbb;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        /* SKILLS */
+
+        #skills {
+            background: #111;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #1c1c1c;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #333;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background: #333;
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #aaa;
+        }
+
+        /* PROJECTS */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #171717;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-card h3 {
+            padding: 15px 15px 5px;
+        }
+
+        .project-card p {
+            padding: 10px 15px 20px;
+            color: #f90b0b;
+            line-height: 1.6;
+        }
+
+        /* CONTACT */
+
+        #contact {
+            background: #111;
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact-container img {
+            width: 350px;
+            max-width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .contact-info p {
+            color: #f10404;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #050505;
+            padding: 25px;
+            text-align: center;
+            color: #999;
+            border-top: 1px solid #333;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                margin: 8px;
+                display: inline-block;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero {
+                min-height: 550px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 50px 8%;
+            }
+
+            .hero-image {
+                order: 0;
+                width: 100%;
+                max-width: none;
+                height: 420px;
+            }
+
+            .about-content img,
+            .contact-container img {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="logo">
+            ANDILE <span>JIYANE.</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h3>Hello, I'm</h3>
+
+            <h1>
+                Andile <span>Jiyane</span>
+            </h1>
+
+            <h3>UI/UX Designer & Creative Thinker</h3>
+
+            <p>
+                I create beautiful, modern and user-friendly
+                digital experiences. I believe in creativity,
+                innovation and turning ideas into reality.
+            </p>
+
+            <a href="#projects" class="btn">
+                Explore My Work
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="hero-portrait.png" alt="Andile Jiyane portrait">
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT ME -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-content">
+
+            <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
+                alt="Professional portrait">
+
+            <div class="about-text">
+
+                <p>
+                    My name is Andile Jiyane. I am an aspiring
+                    UI/UX designer with a passion for creativity,
+                    technology and digital innovation.
+                </p>
+
+                <p>
+                    I enjoy designing attractive interfaces
+                    and creating experiences that make websites
+                    easy and enjoyable to use.
+                </p>
+
+                <p>
+                    My journey is about learning, growing,
+                    developing my skills and becoming a
+                    professional designer.
+                </p>
+
+                <a href="#contact" class="btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>UI Design</h3>
+                <p>Creative user interfaces</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>UX Design</h3>
+                <p>User-friendly experiences</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Figma</h3>
+                <p>Prototyping and wireframes</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Website structure</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Website styling</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Graphic Design</h3>
+                <p>Visual creativity</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                    alt="Website design project">
+
+                <h3>Website Design</h3>
+
+                <p>
+                    Designing modern websites with clean
+                    layouts and attractive interfaces.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559028012-481c04fa702d"
+                    alt="UI design project">
+
+                <h3>UI/UX Design</h3>
+
+                <p>
+                    Creating user-friendly digital products
+                    that solve everyday problems.
+                </p>
+
+            </div>
+
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1545235617-9465d2a55698"
+                    alt="Creative design project">
+
+                <h3>Graphic Design</h3>
+
+                <p>
+                    Developing creative visual designs
+                    and digital graphics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact-container">
+
+            <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9"
+                alt="Professional portrait">
+
+            <div class="contact-info">
+
+                <p><strong>Name:</strong> Andile Jiyane</p>
+
+                <p><strong>Profession:</strong> UI/UX Designer</p>
+
+                <p><strong>Location:</strong> Zimbabwe</p>
+
+                <p><strong>Email:</strong>
+                    YOUR_EMAIL@gmail.com
+                </p>
+
+                <a href="mailto:YOUR_EMAIL@gmail.com"
+                   class="btn">
+                    Send Me an Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Andile Jiyane.
+            All Rights Reserved.
+        </p>
+
+        <p>UI/UX Designer | Creative Thinker</p>
+
+    </footer>
+
+</body>
+</html>
+
